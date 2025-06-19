@@ -9,6 +9,26 @@ type Player = {
   position: string
 }
 
+type Match = {
+  id: number;
+  date: string;
+  opponent: string;
+  score: string;
+  mvp?: { name: string };
+}
+
+type Attendance = {
+  id: number
+  date: string // ISO format
+  playerId: number
+  player?: {
+    id: number
+    name: string
+    position: string
+  }
+}
+
+
 export default function AdminPage() {
   const [players, setPlayers] = useState<Player[]>([])
   const [matchForm, setMatchForm] = useState({
